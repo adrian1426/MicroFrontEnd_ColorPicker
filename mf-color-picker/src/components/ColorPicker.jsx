@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ColorPicker = () => {
+  const [color, setColor] = useState('#000000');
+
+  const handleColorChange = (e) => {
+    const { value } = e.target;
+    setColor(value);
+  };
+
   return (
     <form>
       <input
@@ -11,6 +18,7 @@ const ColorPicker = () => {
           height: '300px'
         }}
         title='Seleccione un color...'
+        onChange={handleColorChange}
       />
 
       <div className="text-center">
@@ -18,13 +26,13 @@ const ColorPicker = () => {
           <div style={{
             width: '20px',
             height: '20px',
-            background: '#312828',
+            background: color,
             display: 'inline-block',
             margin: '0 1rem',
             borderRadius: '100%'
           }}>
           </div>
-          #312828
+          {color}
         </h2>
       </div>
     </form>
