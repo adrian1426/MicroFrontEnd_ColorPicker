@@ -1,14 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import "./index.css";
+import ColorList from "./components/ColorList";
 
 const App = () => (
-  <div className="container">
-    <div>Name: mf-color-list</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+  <div>
+    <ColorList />
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));

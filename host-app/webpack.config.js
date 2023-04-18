@@ -44,7 +44,8 @@ module.exports = {
       name: "host_app",
       filename: "remoteEntry.js",
       remotes: {
-        "colorPicker": "mf_color_picker@http://localhost:3001/remoteEntry.js"
+        "colorPicker": "mf_color_picker@http://localhost:3001/remoteEntry.js",
+        "colorList": "mf_color_list@http://localhost:3002/remoteEntry.js"
       },
       exposes: {},
       shared: {
