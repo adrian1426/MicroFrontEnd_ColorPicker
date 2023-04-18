@@ -44,7 +44,9 @@ module.exports = {
       name: "mf_color_picker",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./ColorPicker": "./src/components/ColorPicker.jsx"
+      },
       shared: {
         ...deps,
         react: {
