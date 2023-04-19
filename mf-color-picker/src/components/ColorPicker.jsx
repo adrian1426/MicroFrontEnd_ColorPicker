@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const ColorPicker = () => {
   const [color, setColor] = useState('#000000');
+  const [colorList, setColorList] = useState([]);
 
   const handleColorChange = (e) => {
     const { value } = e.target;
@@ -11,6 +12,7 @@ const ColorPicker = () => {
   const handleSubmitSaveColor = (e) => {
     e.preventDefault();
     alert(`El color seleccionado es: ${color}`);
+    setColorList(prevState => ([color, ...prevState]));
   };
 
   return (
