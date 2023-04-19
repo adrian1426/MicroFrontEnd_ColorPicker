@@ -8,8 +8,13 @@ const ColorPicker = () => {
     setColor(value);
   };
 
+  const handleSubmitSaveColor = (e) => {
+    e.preventDefault();
+    alert(`El color seleccionado es: ${color}`);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmitSaveColor}>
       <input
         type="color"
         className='form-control'
@@ -34,6 +39,13 @@ const ColorPicker = () => {
           </div>
           {color}
         </h2>
+
+        <button
+          type="submit"
+          className='btn btn-success'
+        >
+          Guardar color
+        </button>
       </div>
     </form>
   );
