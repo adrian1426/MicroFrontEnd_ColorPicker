@@ -8,6 +8,7 @@ const ColorPicker = (props) => {
       <input
         type="color"
         className='form-control'
+        value={color}
         style={{
           width: '100%',
           height: '300px'
