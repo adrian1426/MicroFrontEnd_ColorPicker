@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useColorPicker } from '../hooks/useColorPicker';
 
 const ColorPicker = () => {
-  const [color, setColor] = useState('#000000');
-  const [colorList, setColorList] = useState([]);
-
-  const handleColorChange = (e) => {
-    const { value } = e.target;
-    setColor(value);
-  };
-
-  const handleSubmitSaveColor = (e) => {
-    e.preventDefault();
-    alert(`El color seleccionado es: ${color}`);
-    setColorList(prevState => ([color, ...prevState]));
-  };
+  const { color, handleColorChange, handleSubmitSaveColor } = useColorPicker();
 
   return (
     <form onSubmit={handleSubmitSaveColor}>

@@ -45,7 +45,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./ColorPicker": "./src/components/ColorPicker.jsx"
+        "./ColorPicker": "./src/components/ColorPicker.jsx",
+        "./useColorPicker": "./src/hooks/useColorPicker.js"
       },
       shared: {
         ...deps,
