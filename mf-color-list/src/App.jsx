@@ -4,7 +4,7 @@ import ColorList from "./components/ColorList";
 
 const App = () => (
   <div>
-    <ColorList />
+    <ColorList colors={['#000000']} />
   </div>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
