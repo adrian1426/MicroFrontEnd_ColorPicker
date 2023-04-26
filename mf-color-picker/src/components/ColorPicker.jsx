@@ -1,8 +1,7 @@
 import React from 'react';
-import { useColorPicker } from '../hooks/useColorPicker';
 
-const ColorPicker = () => {
-  const { color, handleColorChange, handleSubmitSaveColor } = useColorPicker();
+const ColorPicker = (props) => {
+  const { color, handleColorChange, handleSubmitSaveColor } = props;
 
   return (
     <form onSubmit={handleSubmitSaveColor}>

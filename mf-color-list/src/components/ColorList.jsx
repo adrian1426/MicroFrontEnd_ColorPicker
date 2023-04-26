@@ -1,8 +1,15 @@
 import React from 'react';
 
-const ColorList = () => {
+const ColorList = (props) => {
+  const { colors } = props;
 
-  const colors = ["#000000", "#971c1c", "#2ab4cf", "#4ecf2a"];
+  if (colors.length <= 0) {
+    return (
+      <div className="list-group text-center">
+        <b>Aún no hay colores agregados</b>
+      </div>
+    );
+  }
 
   return (
     <div className="list-group text-center">
