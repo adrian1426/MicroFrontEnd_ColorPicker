@@ -1,7 +1,21 @@
 import React from 'react';
+import SweetAlert from 'sweetalert2';
 
 const ColorList = (props) => {
   const { colors } = props;
+
+  const handleCopyColor = (color) => {
+    navigator.clipboard.writeText(color);
+
+    SweetAlert.fire({
+      position: 'center',
+      icon: 'success',
+      title: `Color ${color} copiado.`,
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true
+    });
+  };
 
   if (colors.length <= 0) {
     return (
@@ -25,6 +39,7 @@ const ColorList = (props) => {
               background: color,
               fontWeight: 'bolder'
             }}
+            onClick={() => handleCopyColor(color)}
           >
             {color}
           </button>
