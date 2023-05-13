@@ -2,9 +2,9 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
-module.exports = {
+module.exports = (_, argv) => ({
   output: {
-    publicPath: "https://marvelous-biscotti-5d6930.netlify.app/",
+    publicPath: argv.mode === "development" ? "http://localhost:3001/" : "https://marvelous-biscotti-5d6930.netlify.app/",
   },
 
   resolve: {
@@ -64,4 +64,4 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
-};
+});
